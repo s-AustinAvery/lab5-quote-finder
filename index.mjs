@@ -187,9 +187,4 @@ app.get('/api/author/:id', async (req, res) => {
     }
 });
 
-//server start
-app.listen(3000, () => {
-    console.log('server running on http://localhost:3000');
-});
-
 export default app;
