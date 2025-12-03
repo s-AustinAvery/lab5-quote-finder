@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("partials/header") %>
+
+    <body>
+        <h1>Quote Finder</h1>
+
+        <!-- keyword -->
+        <form action="/searchByKeyword">
+            Keyword:
+            <input type="text" name="keyword">
+            <br><button>Search by Keyword</button>
+        </form>
+
+        <hr>
+
+        <!-- author -->
+        <form action="/searchByAuthor">
+            Author:
+            <select name="authorId">
+            <% authors.forEach(a => { %>
+                <option value="<%= a.authorId %>"><%= a.author %></option>
+            <% }) %>
+            </select>
+
+            <br><button>Search by Author</button>
+        </form>
+
+        <hr>
+
+        <!-- catagory -->
+        <form action="/searchByCategory">
+        Category:
+        <select name="category">
+            <% categories.forEach(c => { %>
+            <option value="<%= c.category %>"><%= c.category %></option>
+            <% }) %>
+        </select>
+
+        <br><button>Search by Category</button>
+        </form>
+
+        <hr>
+
+        <!-- likes -->
+        <form action="/searchByLikes">
+            Likes from:
+            <input type="number" name="minLikes" min="0" placeholder="min">
+            to
+            <input type="number" name="maxLikes" min="0" placeholder="max">
+            <br><button>Search by Likes</button>
+        </form>
+
+        <%- include("partials/footer") %>
+    </body>
+</html>

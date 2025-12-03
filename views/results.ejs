@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("partials/header") %>
+
+    <body>
+        <h2>
+        <% if (keyword) { %>
+            Results for "<%= keyword %>"
+        <% } else if (selectedCategory) { %>
+            Quotes in category "<%= selectedCategory %>"
+        <% } else if (minLikes !== null && maxLikes !== null) { %>
+            Quotes with likes between <%= minLikes %> and <%= maxLikes %>
+        <% } else if (data.length > 0) { %>
+            Quotes by <%= data[0].author %>
+        <% } %>
+        </h2>
+
+        <% if (data.length === 0) { %>
+            <p>No quotes found.</p>
+        <% } else { %>
+            <ul>
+            <% data.forEach(row => { %>
+                <li>
+                "<%= row.quote %>" —
+                <a href="#" class="authorLink" id="<%= row.authorId %>">
+                    <strong><%= row.author %></strong>
+                </a>
+                </li>
+            <% }) %>
+            </ul>
+        <% } %>
+
+        <div class="modal fade" id="authorModal" tabindex="-1"
+            aria-labelledby="authorModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="authorModalLabel">Author Information</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- modal to contain author info -->
+                    <div id="authorInfo"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        <%- include("partials/footer") %>
+
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>

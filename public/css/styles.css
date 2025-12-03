@@ -1,0 +1,141 @@
+/* colors */
+:root {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --heading-color: #ffffff;
+
+  --accent-color: #4f9cff;
+  --accent-hover: #2676d2;
+
+  --border-color: #2a2a2a;
+  --card-bg: #1e1e1e;
+
+  --modal-bg: #1e1e1e;
+  --modal-border: #333;
+
+  --link-color: #4f9cff;
+  --link-hover: #8abaff;
+
+  --button-bg: #4f9cff;
+  --button-text: #000;
+  --button-hover: #2676d2; 
+
+    --font-stack: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* main stylings */
+body {
+    background: var(--bg-color);
+    font-family: var(--font-stack);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+h1, h2, h3, h4 {
+    color: var(--heading-color);
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* forms */
+
+form {
+    background: var(--card-bg);
+    padding: 15px 20px;
+    margin: 20px auto;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+
+    max-width: 500px;
+    width: 90%;
+
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+input[type="text"],
+input[type="number"],
+
+input[name="minLikes"],
+input[name="maxLikes"] {
+    width: 80px;
+    display: inline-block;
+    text-align: center;
+    margin: 0 5px;
+}
+
+select {
+    padding: 6px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 70%;
+    max-width: 250px;
+    text-align: center; 
+}
+
+button {
+    background: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 7px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 5px;
+    margin: 10px auto 0 auto;
+    transition: background 0.2s;
+    font-size: 1rem;
+}
+
+button:hover {
+    background: var(--button-hover);
+}
+
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+}
+
+/* results */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+ul li {
+    background: var(--card-bg);
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* modal */
+.modal-content {
+    background: var(--modal-bg);
+    border-color: var(--modal-border);
+    text-align: center;
+}
+
+.modal-title {
+    color: var(--heading-color);
+}
+
+#authorInfo img {
+    max-width: 70%;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
